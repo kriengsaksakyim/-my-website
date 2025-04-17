@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ตกใจแน่!</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      animation: zoom 0.3s ease-in-out;
+    }
+
+    #secondImage, #nextButton {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #nextButton {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    @keyframes zoom {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <img id="screamImage" src="scream.jpg" alt="ตกใจ!">
+
+  <img id="secondImage" src="ghost2.jpg" alt="ภาพลับ">
+
+  <button id="nextButton" onclick="window.location.href='next.html'">ไปต่อ...</button>
+
+  <audio autoplay>
+    <source src="scream.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("secondImage").style.display = "block";
+    }, 3000); // โผล่รูปที่ 2 หลัง 3 วินาที
+
+    setTimeout(() => {
+      document.getElementById("nextButton").style.display = "block";
+    }, 5000); // แสดงปุ่มไปต่อหลัง 5 วินาที
+  </script>
+</body>
+</html>

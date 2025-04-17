@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>โหลดไวรัส...</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Kanit', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .warning {
+      font-size: 2rem;
+      color: red;
+      margin-top: 50px;
+      display: none;
+    }
+
+    .blinking {
+      animation: blink 0.5s infinite alternate;
+    }
+
+    @keyframes blink {
+      0%   { background-color: black; }
+      100% { background-color: red; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ไปยังหน้าเว็บถัดไป</h1>
+  <button onclick="startVirus()">กดเพื่อดูอะไรเพิ่ม</button>
+
+  <div id="warning" class="warning blinking">⚠️ ไวรัสกำลังโหลดเข้าเครื่องคุณ! ⚠️</div>
+
+  <audio id="alertSound">
+    <source src="alert.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    let alertCount = 0;
+
+    function startVirus() {
+      document.getElementById("alertSound").play();
+      document.getElementById("warning").style.display = 'block';
+
+      function showAlert() {
+        if (alertCount < 3) {
+          alertCount++;
+          setTimeout(() => {
+            alert(`⚠️ การโหลดไวรัส #${alertCount} เสร็จสิ้น!\nระบบของคุณกำลังถูกควบคุม...`);
+            showAlert(); // เรียกซ้ำ
+          }, 1500);
+        } else {
+          // ไปยังหน้าเฉลย
+          window.location.href = "gotcha.html";
+        }
+      }
+
+      setTimeout(showAlert, 1500);
+    }
+  </script>
+
+</body>
+</html>

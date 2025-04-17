@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>คุณได้รับ iPhone!</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: 'Kanit', sans-serif;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: rainbow 1.5s infinite;
+    }
+
+    img {
+      margin-top: 30px;
+      width: 250px;
+      animation: pop 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes rainbow {
+      0% { color: red; }
+      25% { color: yellow; }
+      50% { color: lime; }
+      75% { color: cyan; }
+      100% { color: magenta; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 ดีใจด้วย! 🎉<br>คุณพึ่งได้รับ iPhone จากเว็บหนังโปเก 🤣</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/IPhone_14_Pro_vector.svg/512px-IPhone_14_Pro_vector.svg.png" alt="iPhone">
+
+</body>
+</html>

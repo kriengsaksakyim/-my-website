@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>รับ iPhone 16 โคตรตึง!</title>
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      color: #e60000;
+      font-size: 2.5rem;
+    }
+
+    input, textarea {
+      width: 300px;
+      padding: 12px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: limegreen;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📱 รับ iPhone 16 ฟรี จากเว็บหนังโปเก</h1>
+
+  <form id="iphoneForm">
+    <input type="text" id="nickname" placeholder="ชื่อเล่นของคุณ" required><br>
+    <textarea id="reason" placeholder="คิดยังไงถึงได้ iPhone รุ่นใหม่เท่ๆโคตรตึง" required></textarea><br>
+    <button type="submit">✅ ยืนยันเพื่อไปรับรางวัล</button>
+  </form>
+
+  <script>
+    document.getElementById("iphoneForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nickname = document.getElementById("nickname").value;
+      const reason = document.getElementById("reason").value;
+      window.location.href = `next.html?nickname=${encodeURIComponent(nickname)}&reason=${encodeURIComponent(reason)}`;
+    });
+  </script>
+
+</body>
+</html>

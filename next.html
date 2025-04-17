@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>หน้านี้มีอะไร?</title>
+</head>
+<body style="text-align: center;">
+  <h1>ลูกพี่ๆ📯คุณผ่านด่านแรกมาแล้วและมัน ปยอ มากเลยใช่ไหม!</h1>
+  <p>แต่ความลับ...ยังไม่จบเพียงเท่านี้ 😈 MUHAHAHA </p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>หน้าต่อไป</title>
+  <style>
+    body {
+      background-color: #222;
+      color: white;
+      font-family: 'Kanit', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .back { background-color: orange; }
+    .home { background-color: dodgerblue; }
+    .continue { background-color: limegreen; }
+  </style>
+</head>
+<body>
+
+  <h1>คุณมาถึงหน้าถัดไปแล้ว WOW !!!</h1>
+  <p>จะทำอะไรต่อดี? เลือกเลยฮ้าฟฟู่:</p>
+
+  <button class="btn back" onclick="location.href='jumpscare.html'">ย้อนกลับไปเพิ่อดูไรไร้สาระอีกครั้ง</button>
+  <button class="btn continue" onclick="location.href='virus.html'">ไปต่อ (อยากรู้จะมีไรกังๆอีก)</button>
+  <button class="btn home" onclick="location.href='index.html'">กลับสู่หน้าแรก</button>
+
+  <!-- กล่องนับถอยหลัง + ปุ่มไปรีวิว -->
+<div id="countdownBox" style="
+font-size: 24px;
+margin-top: 50px;
+background: #111;
+padding: 20px;
+border-radius: 10px;
+display: inline-block;
+color: #0af;
+">
+รอ... <span id="countdown">5</span> ล้านวินาที
+</div>
+
+<br>
+
+<button id="goButton" onclick="location.href='review.html'" style="
+margin-top: 20px;
+padding: 15px 30px;
+font-size: 18px;
+border: none;
+border-radius: 10px;
+background-color: #0af;
+color: white;
+cursor: pointer;
+display: none;
+">
+ก ด เ พื่ อ ร ะ บุ ค ว า ม เ ก ข อ ง ตุ ณ💬
+</button>
+
+<script>
+let count = 5;
+const countdownEl = document.getElementById("countdown");
+const buttonEl = document.getElementById("goButton");
+const box = document.getElementById("countdownBox");
+
+const timer = setInterval(() => {
+  count--;
+  countdownEl.textContent = count;
+
+  if (count <= 0) {
+    clearInterval(timer);
+    box.textContent = "ครบแล้ว!";
+    buttonEl.style.display = "inline-block";
+  }
+}, 1000);
+</script>
+</body>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ยินดีด้วย!</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Kanit', sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: gold;
+      animation: rainbow 2s infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    @keyframes rainbow {
+      0% { color: red; }
+      20% { color: orange; }
+      40% { color: yellow; }
+      60% { color: lime; }
+      80% { color: cyan; }
+      100% { color: violet; }
+    }
+
+    img {
+      margin-top: 30px;
+      width: 250px;
+    }
+
+    .box {
+      margin-top: 30px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 ยินดีด้วย! คุณได้รับ iPhone 16 🎉</h1>
+
+  <div class="box">
+    <p id="nameText"></p>
+    <p id="reasonText"></p>
+  </div>
+
+  <img src="https://media.tenor.com/VWosLEWzvZMAAAAC/iphone.gif" alt="iPhone">
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nickname = urlParams.get('nickname');
+    const reason = urlParams.get('reason');
+
+    document.getElementById("nameText").textContent = `📛 ชื่อเล่นของคุณ: ${nickname}`;
+    document.getElementById("reasonText").textContent = `💬 ความคิดเห็นของคุณ: "${reason}"`;
+  </script>
+
+</body>
+</html>
